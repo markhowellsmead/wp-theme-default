@@ -85,7 +85,7 @@ class Theme
         wp_enqueue_script('ui', get_template_directory_uri().'/Resources/Public/JavaScript/ui.js', array('jquery'), $this->version, true);
         wp_localize_script('ui', 'wordpress_theme', array(
             'translations' => array(
-                'Hello World' => __('Hello world', 'wordpress_theme'),
+                'Hello world' => __('Hello world', 'wordpress_theme'),
             ),
         ));
     }
