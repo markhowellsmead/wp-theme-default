@@ -27,6 +27,11 @@ structure closer to a PHP class autoloader environment.
 * Replace all instances of the main PHP namespace ``MHM`` with your own unique prefix. Use this prefix for all your projects: for example, the main namespace prefixes ``MyGreatTheme``.
 * Make a great WordPress Theme!
 
+## Changelog
+
+### 0.0.1
+* Initial version
+
 ## Author
 Mark Howells-Mead | www.markweb.ch | This repository began on 23rd November 2016
 
