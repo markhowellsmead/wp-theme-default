@@ -8,15 +8,16 @@
  * since this theme is not meant to be backward compatible beyond that and
  * relies on many newer functions and markup changes introduced in 4.6.
  *
- * @since v1.0
+ * This code does not use PHP namespaces, so that it can catch any problems
+ * in old server environments too.
+ *
+ * @since v0.0.1
  */
 
 /**
  * Prevent switching to this Theme on old versions of WordPress.
  *
  * Switches to the default theme.
- *
- * @since v1.0
  */
 function wordpress_theme_switch_theme()
 {
@@ -34,9 +35,7 @@ add_action('after_switch_theme', 'wordpress_theme_switch_theme');
  * Prints an update nag after an unsuccessful attempt to switch to
  * this Theme on WordPress versions prior to 4.6.
  *
- * @since v1.0
- *
- * @global string $wp_version WordPress version.
+ *  @global string $wp_version WordPress version.
  */
 function wordpress_theme_upgrade_notice()
 {
@@ -46,8 +45,6 @@ function wordpress_theme_upgrade_notice()
 
 /**
  * Prevents the Customizer from being loaded on WordPress versions prior to 4.6.
- *
- * @since v1.0
  *
  * @global string $wp_version WordPress version.
  */
@@ -61,8 +58,6 @@ add_action('load-customize.php', 'wordpress_theme_customize');
 
 /**
  * Prevents the Theme Preview from being loaded on WordPress versions prior to 4.6.
- *
- * @since v1.0
  *
  * @global string $wp_version WordPress version.
  */
