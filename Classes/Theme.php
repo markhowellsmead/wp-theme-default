@@ -9,8 +9,7 @@ class Theme
     public $themedata = array();
 
     /**
-     * This function will be run when the class is initialized.
-     * Add your hook and filter references here.
+     * Debug helper function. You probably don't need this in a production-quality Theme.
      */
     public function dump($var, $die = false)
     {
@@ -20,6 +19,10 @@ class Theme
         }
     }
 
+    /**
+     * This function will be run when the class is initialized.
+     * Add your hook and filter references here.
+     */
     public function __construct()
     {
         $this->themeoptions = get_option('themeoptions_wordpress_theme');
@@ -70,7 +73,7 @@ class Theme
     public function addFrontendStyles()
     {
         wp_enqueue_style('css-reset', get_template_directory_uri().'/Resources/Public/Css/css-reset.css', null, $this->version);
-        wp_enqueue_style('theme', get_stylesheet_uri(), array('css-reset'), null, $this->version);
+        wp_enqueue_style('theme', get_stylesheet_uri(), array('css-reset'), $this->version, 'all');
     }
 
     /**

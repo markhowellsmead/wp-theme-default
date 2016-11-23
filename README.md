@@ -28,6 +28,11 @@ more classically large CMS, like TYPO3. It's as close as I can get to [PSR-4](ht
 
 ## Changelog
 
+### 0.0.3
+* Fix enqueued file version numbering.
+* Fix misplaced code comments.
+
+
 ### 0.0.2
 * Add proper Theme comment to style.css file.
 * Add Content-None template part.
