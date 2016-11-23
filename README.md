@@ -6,8 +6,7 @@ which are always used in every project. It tends to be the starting point for a 
 so if you're starting work on (e.g.) a classic two-column Post-driven blog Theme, this version may not be for you.
 
 The folder structure is more orderly than other Theme starter projects, as it adheres to principles set out by 
-more classically large CMS, like TYPO3. This doesn't necessarily improve functionality, but it brings the file 
-structure closer to a PHP class autoloader environment.
+more classically large CMS, like TYPO3. It's as close as I can get to [PSR-4](http://www.php-fig.org/psr/psr-4/), although I'm not an expert… yet!
 
 ## Notes
 * The standard code insists on WordPress 4.6 or newer. Amend the code in ``functions.php`` if this doesn't match with your requirements.
