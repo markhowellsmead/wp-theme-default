@@ -10,8 +10,6 @@
  *
  * This code does not use PHP namespaces, so that it can catch any problems
  * in old server environments too.
- *
- * @since v0.0.1
  */
 
 /**

@@ -2,8 +2,6 @@
 /**
  * This file links the class file for the Theme and through it, any additional classes.
  * Functions should be added to the Theme Class, except for unusual circumstances.
- *
- * @since v0.0.1
  */
 
 /**
