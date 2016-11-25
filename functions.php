@@ -2,12 +2,10 @@
 /**
  * This file links the class file for the Theme and through it, any additional classes.
  * Functions should be added to the Theme Class, except for unusual circumstances.
+ *
+ * This Theme base code is intended for use in WordPress 4.6 or newer running on PHP 5.3 or newer.
  */
-
-/**
- * This Theme base code is intended for use in WordPress 4.6 or newer.
- */
-if (version_compare($GLOBALS['wp_version'], '4.6-alpha', '<')) {
+if (version_compare($wp_version, '4.6', '<') || version_compare(PHP_VERSION, '5.3', '<')) {
     require get_template_directory().'/utilities/backcompat.php';
 } else {
     spl_autoload_register(function ($class_name) {
@@ -21,7 +19,7 @@ if (version_compare($GLOBALS['wp_version'], '4.6-alpha', '<')) {
     new TOPLEVELNAMESPACE\THEMENAMESPACE\Theme();
 
     /**
-     * $content_width is an icky WordPress requirement, which constrains images and oEmbeds
+     * $content_width is a WordPress requirement, which constrains images and oEmbeds
      * which may appear in the main content column. See https://codex.wordpress.org/Content_Width
      * for full details.
      *

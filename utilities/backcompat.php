@@ -10,22 +10,24 @@
  *
  * This code does not use PHP namespaces, so that it can catch any problems
  * in old server environments too.
+ *
+ * The definition, whether this code should be run or not, is in functions.php.
  */
 
 /**
- * Prevent switching to this Theme on old versions of WordPress.
+ * Prevent switching to this theme on old versions of WordPress.
  *
  * Switches to the default theme.
  */
-function wordpress_theme_switch_theme()
+function THEME_KEY_switch_theme()
 {
-    switch_theme(WP_DEFAULT_THEME, WP_DEFAULT_THEME);
+    switch_theme(WP_DEFAULT_THEME, WP_DEFAULT_THEME); // These are PHP constants and do not need to be changed.
 
     unset($_GET['activated']);
 
-    add_action('admin_notices', 'wordpress_theme_upgrade_notice');
+    add_action('admin_notices', 'THEME_KEY_upgrade_notice');
 }
-add_action('after_switch_theme', 'wordpress_theme_switch_theme');
+add_action('after_switch_theme', 'THEME_KEY_switch_theme');
 
 /**
  * Adds a message for unsuccessful theme switch.
@@ -35,9 +37,15 @@ add_action('after_switch_theme', 'wordpress_theme_switch_theme');
  *
  *  @global string $wp_version WordPress version.
  */
-function wordpress_theme_upgrade_notice()
+function THEME_KEY_upgrade_notice()
 {
-    $message = sprintf(__('The selected Theme requires at least WordPress version 4.6. You are running version %s. Please upgrade and try again.', 'wordpress_theme'), $GLOBALS['wp_version']);
+    $message = sprintf(
+        __('The selected theme requires at least WordPress version %1$s and PHP version %2$s. You are running WordPress %3$s and PHP version %4$s. Please upgrade and try again.', 'TEXT_DOMAIN'),
+        '4.6',
+        '5.3',
+        $GLOBALS['wp_version'],
+        PHP_VERSION
+    );
     printf('<div class="error"><p>%s</p></div>', $message);
 }
 
@@ -46,23 +54,35 @@ function wordpress_theme_upgrade_notice()
  *
  * @global string $wp_version WordPress version.
  */
-function wordpress_theme_customize()
+function THEME_KEY_customize()
 {
-    wp_die(sprintf(__('The selected Theme requires at least WordPress version 4.6. You are running version %s. Please upgrade and try again.', 'wordpress_theme'), $GLOBALS['wp_version']), '', array(
+    wp_die(sprintf(
+        __('The selected theme requires at least WordPress version %1$s and PHP version %2$s. You are running WordPress %3$s and PHP version %4$s. Please upgrade and try again.', 'TEXT_DOMAIN'),
+        '4.6',
+        '5.3',
+        $GLOBALS['wp_version'],
+        PHP_VERSION
+    ), '', array(
         'back_link' => true,
     ));
 }
-add_action('load-customize.php', 'wordpress_theme_customize');
+add_action('load-customize.php', 'THEME_KEY_customize');
 
 /**
- * Prevents the Theme Preview from being loaded on WordPress versions prior to 4.6.
+ * Prevents the theme preview from being loaded on WordPress versions prior to 4.6.
  *
  * @global string $wp_version WordPress version.
  */
-function wordpress_theme_preview()
+function THEME_KEY_preview()
 {
     if (isset($_GET['preview'])) {
-        wp_die(sprintf(__('The selected Theme requires at least WordPress version 4.6. You are running version %s. Please upgrade and try again.', 'wordpress_theme'), $GLOBALS['wp_version']));
+        wp_die(sprintf(
+            __('The selected theme requires at least WordPress version %1$s and PHP version %2$s. You are running WordPress %3$s and PHP version %4$s. Please upgrade and try again.', 'TEXT_DOMAIN'),
+            '4.6',
+            '5.3',
+            $GLOBALS['wp_version'],
+            PHP_VERSION
+        ));
     }
 }
-add_action('template_redirect', 'wordpress_theme_preview');
+add_action('template_redirect', 'THEME_KEY_preview');
