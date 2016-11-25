@@ -8,7 +8,7 @@
  * since this theme is not meant to be backward compatible beyond that and
  * relies on many newer functions and markup changes introduced in 4.6.
  *
- * This code does not use PHP namespaces, so that it can catch any problems
+ * The code in this file does not use PHP namespaces, so that it can catch any problems
  * in old server environments too.
  *
  * The definition, whether this code should be run or not, is in functions.php.
