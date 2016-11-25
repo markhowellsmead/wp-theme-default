@@ -31,6 +31,9 @@ more classically large CMS, like TYPO3. It's as close as I can get to [PSR-4](ht
 
 ## Changelog
 
+### 0.0.6
+* Add empty SCSS folder (with gitkeep file) to indicated planned file structure.
+
 ### 0.0.5
 * Bugfix JavaScript text domain.
 
