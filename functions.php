@@ -8,7 +8,7 @@
  * This Theme base code is intended for use in WordPress 4.6 or newer.
  */
 if (version_compare($GLOBALS['wp_version'], '4.6-alpha', '<')) {
-    require get_template_directory().'/Utilities/BackCompat.php';
+    require get_template_directory().'/utilities/backcompat.php';
 } else {
     spl_autoload_register(function ($class_name) {
         if (false !== strpos($class_name, 'WordpressTheme')) {
@@ -25,8 +25,8 @@ if (version_compare($GLOBALS['wp_version'], '4.6-alpha', '<')) {
      * which may appear in the main content column. See https://codex.wordpress.org/Content_Width
      * for full details.
      *
-     * Customize this value for your website. (Probably referencing the max.
-     * width of the main content column at desktop resolution.)
+     * Customize this value for your website. (Referencing the max. width of the main
+     * content column at desktop resolution.)
      *
      * @var int
      */
