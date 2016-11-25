@@ -1,6 +1,6 @@
 <?php
 
-namespace MHM\WordpressTheme;
+namespace YourUniqueTopLevelNamespace\PascalCaseThemeKey;
 
 class Theme
 {

@@ -13,12 +13,12 @@ if (version_compare($GLOBALS['wp_version'], '4.6-alpha', '<')) {
     spl_autoload_register(function ($class_name) {
         if (false !== strpos($class_name, 'WordpressTheme')) {
             $classes_dir = realpath(plugin_dir_path(__FILE__)).DIRECTORY_SEPARATOR.'Classes'.DIRECTORY_SEPARATOR;
-            $class_file = str_replace('MHM\WordpressTheme\\', DIRECTORY_SEPARATOR, $class_name).'.php';
+            $class_file = str_replace('YourUniqueTopLevelNamespace\PascalCaseThemeKey\\', DIRECTORY_SEPARATOR, $class_name).'.php';
             require_once $classes_dir.$class_file;
         }
     });
 
-    new MHM\WordpressTheme\Theme();
+    new YourUniqueTopLevelNamespace\PascalCaseThemeKey\Theme();
 
     /**
      * $content_width is an icky WordPress requirement, which constrains images and oEmbeds
