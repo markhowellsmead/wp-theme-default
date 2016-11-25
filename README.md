@@ -34,6 +34,7 @@ more classically large CMS, like TYPO3. It's as close as I can get to [PSR-4](ht
 * Improve version checking.
 * Improve namespace and text domain example code.
 * Revise folder/file naming to use lowercase, except for individual PHP class files.
+* Re-locate template parts to use a more common, fallback-friendly file structure.
 * Add starter file for single post view, and add various template parts.
 * Improve README.
 
