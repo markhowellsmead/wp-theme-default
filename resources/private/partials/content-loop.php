@@ -1,17 +1,17 @@
 <article <?php post_class();?>>
 
         <?php
-            get_template_part('resources/private/partials/post/header', 'single');
+            get_template_part('resources/private/partials/header', 'loop');
         ?>
 
         <section class="post-body">
         <?php
-            the_content();
+            the_excerpt();
         ?>
         </section>
 
         <?php
-            get_template_part('resources/private/partials/post/footer', 'single');
+            get_template_part('resources/private/partials/footer', 'loop');
         ?>
 
     </section>

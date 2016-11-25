@@ -8,7 +8,7 @@ global $post;
 <article <?php post_class();?>>
 
         <?php
-            get_template_part('resources/private/partials/post/header');
+            get_template_part('resources/private/partials/header');
         ?>
 
         <section class="post-body">
@@ -18,7 +18,7 @@ global $post;
         </section>
 
         <?php
-            get_template_part('resources/private/partials/post/footer');
+            get_template_part('resources/private/partials/footer');
         ?>
 
     </section>
