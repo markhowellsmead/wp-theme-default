@@ -1,6 +1,6 @@
 <?php
 
-namespace YourUniqueTopLevelNamespace\PascalCaseThemeKey;
+namespace TOPLEVELNAMESPACE\THEMENAMESPACE;
 
 trait Taxonomy
 {

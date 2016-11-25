@@ -1,6 +1,6 @@
 <?php
 
-namespace YourUniqueTopLevelNamespace\PascalCaseThemeKey;
+namespace TOPLEVELNAMESPACE\THEMENAMESPACE;
 
 class Theme
 {
@@ -27,7 +27,7 @@ class Theme
      */
     public function __construct()
     {
-        $this->themeoptions = get_option('themeoptions_wordpress_theme');
+        $this->themeoptions = get_option('themeoptions_TEXT_DOMAIN');
         $this->themedata = wp_get_theme();
         $this->version = $this->themedata->Version; // from style.css in the theme root folder
 
@@ -74,7 +74,7 @@ class Theme
      */
     public function addFrontendStyles()
     {
-        wp_enqueue_style('css-reset', get_template_directory_uri().'/Resources/Public/Css/css-reset.css', null, $this->version);
+        wp_enqueue_style('css-reset', get_template_directory_uri().'/resources/public/css/css-reset.css', null, $this->version);
         wp_enqueue_style('theme', get_stylesheet_uri(), array('css-reset'), $this->version, 'all');
     }
 
@@ -87,10 +87,10 @@ class Theme
         wp_enqueue_script('jquery'); // Use WordPress core version
 
         // In footer
-        wp_enqueue_script('ui', get_template_directory_uri().'/Resources/Public/JavaScript/ui.js', array('jquery'), $this->version, true);
-        wp_localize_script('ui', 'wordpress_theme', array(
+        wp_enqueue_script('ui', get_template_directory_uri().'/resources/public/javascript/ui.js', array('jquery'), $this->version, true);
+        wp_localize_script('ui', 'TEXT-DOMAIN-JS', array(
             'translations' => array(
-                'Hello world' => __('Hello world', 'wordpress_theme'),
+                'Hello world' => __('Hello world', 'TEXT_DOMAIN'),
             ),
         ));
     }
