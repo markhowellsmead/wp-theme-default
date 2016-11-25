@@ -13,7 +13,7 @@ global $post;
 
         <section class="post-body">
         <?php
-            echo '<p>'.__('Sorry, the content or file you have requested is not available.', 'wordpress_theme').'</p>';
+            echo '<p>'.__('Sorry, the content or file you have requested is not available.', 'TEXT_DOMAIN').'</p>';
         ?>
         </section>
 

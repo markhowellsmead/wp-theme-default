@@ -1,10 +1,3 @@
-<?php
-/**
-* Output of an individual post.
-*/
-global $post;
-?>
-
 <article <?php post_class();?>>
 
         <?php

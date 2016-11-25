@@ -7,7 +7,7 @@
         '<time class="post-published" datetime="%1$s">%2$s</time>',
         get_the_date('c'),
         sprintf(
-            __('%1$s at %2$s', 'wordpress_theme'),
+            __('%1$s at %2$s', 'TEXT_DOMAIN'),
             get_the_date(),
             get_the_time()
         )
