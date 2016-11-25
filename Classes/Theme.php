@@ -4,6 +4,8 @@ namespace YourUniqueTopLevelNamespace\PascalCaseThemeKey;
 
 class Theme
 {
+    use Taxonomy;
+
     public $themeoptions = array();
     public $version = '';
     public $themedata = array();
