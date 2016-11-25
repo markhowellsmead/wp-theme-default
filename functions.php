@@ -8,7 +8,7 @@
  * This Theme base code is intended for use in WordPress 4.6 or newer.
  */
 if (version_compare($GLOBALS['wp_version'], '4.6-alpha', '<')) {
-    require get_template_directory().'/Classes/Utilities/BackCompat.php';
+    require get_template_directory().'/Utilities/BackCompat.php';
 } else {
     spl_autoload_register(function ($class_name) {
         if (false !== strpos($class_name, 'WordpressTheme')) {
