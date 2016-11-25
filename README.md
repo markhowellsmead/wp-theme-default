@@ -22,13 +22,17 @@ more classically large CMS, like TYPO3. It's as close as I can get to [PSR-4](ht
 1. Download this repository as a ZIP file.
 2. Rename the folder to match your Theme name.
 3. Remove this README file and replace it with your own. Everyone loves good documentation.
-4. Replace all instances of ``TEXT_DOMAIN`` and ``THEME_KEY`` with the *lowercase* key of your Theme - e.g. ``my_great_theme``. This should be used for translation calls etc. and should ideally be lowercase and match the folder name of your theme.
-5. Replace all instances of ``THEMENAMESPACE`` with the [Pascal case](https://en.wikipedia.org/wiki/PascalCase) version of your Theme key. e.g. ``MyGreatTheme``. This should be analagous to the theme's text domain, but in PascalCase.
-6. Replace all instances of the main PHP namespace ``TOPLEVELNAMESPACE`` with your own unique top level PHP namespace. 
-7. The standard compatability check looks for **WordPress 4.6** or newer and **PHP 5.3** or newer. If this doesn't match your theme requirements, replace all instances of these version numbers throughout the theme before you start work.
-8. Make a great WordPress Theme!
+4. Replace all instances of ``TEXT_DOMAIN``, ``TEXT_DOMAIN_JS`` and ``THEME_KEY`` with the *lowercase* key of your Theme - e.g. ``my_great_theme``. This should be used for translation calls etc. and should ideally be lowercase and match the folder name of your theme.
+5. ``TEXT_DOMAIN_JS`` must be usable as a [JavaScript object name](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects). So no spaces, dashes or special characters.
+6. Replace all instances of ``THEMENAMESPACE`` with the [Pascal case](https://en.wikipedia.org/wiki/PascalCase) version of your Theme key. e.g. ``MyGreatTheme``. This should be analagous to the theme's text domain, but in PascalCase.
+7. Replace all instances of the main PHP namespace ``TOPLEVELNAMESPACE`` with your own unique top level PHP namespace. 
+8. The standard compatability check looks for **WordPress 4.6** or newer and **PHP 5.3** or newer. If this doesn't match your theme requirements, replace all instances of these version numbers throughout the theme before you start work.
+9. Make a great WordPress Theme!
 
 ## Changelog
+
+### 0.0.5
+* Bugfix JavaScript text domain.
 
 ### 0.0.4
 * Improve version checking.

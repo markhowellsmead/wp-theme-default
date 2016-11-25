@@ -88,7 +88,15 @@ class Theme
 
         // In footer
         wp_enqueue_script('ui', get_template_directory_uri().'/resources/public/javascript/ui.js', array('jquery'), $this->version, true);
-        wp_localize_script('ui', 'TEXT-DOMAIN-JS', array(
+
+        /*
+         * Your value for TEXT_DOMAIN_JS must be suitable for use
+         * as a JavaScript object name. i.e. underscores instead
+         * of dashes and no special characters.
+         *
+         * If you don't need to pass translations to JavaScript, then you can delete this.
+         */
+        wp_localize_script('ui', 'TEXT_DOMAIN_JS', array(
             'translations' => array(
                 'Hello world' => __('Hello world', 'TEXT_DOMAIN'),
             ),
