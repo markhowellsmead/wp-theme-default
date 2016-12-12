@@ -43,6 +43,11 @@ class Theme
         add_theme_support('automatic-feed-links');
 
         /*
+         * This theme supports post thumbnails by default.
+         */
+        add_theme_support('post-thumbnails');
+
+        /*
          * Let WordPress manage the document title.
          * By adding theme support, we declare that this theme does not use a
          * hard-coded <title> tag in the document head, and expect WordPress to
