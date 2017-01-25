@@ -15,7 +15,7 @@ more classically large CMS, like TYPO3. It's as close as I can get to [PSR-4](ht
 
 ### Customization
 * The WordPress Admin Bar is deactivated by default, through use of the ``show_admin_bar`` hook. Remove the code in the Theme class if you'd rather let logged-in users work with the admin bar.
-* The CSS file ``css-reset.css`` is a normalizer. See https://github.com/mhmli/css-reset for an extensive explanation, or if you need a newer version.
+* The CSS file ``css-reset.css`` is a normalizer. See https://github.com/markhowellsmead/css-reset for an extensive explanation, or if you need a newer version.
 * This code pulls in unminified JavaScript files. Change the links to use your own minified versions if you need to.
 
 ## Usage
