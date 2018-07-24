@@ -32,12 +32,6 @@ class Theme
         $this->version = $this->themedata->Version; // from style.css in the theme root folder
 
         /*
-         * This removes the admin bar in the frontend. Delete this code
-         * if you'd rather let logged-in users work with the admin bar.
-         */
-        add_filter('show_admin_bar', '__return_false');
-
-        /*
          * Add default posts and comments RSS feed links to head.
          */
         add_theme_support('automatic-feed-links');
@@ -72,6 +66,7 @@ class Theme
          */
         add_action('wp_enqueue_scripts', array($this, 'addFrontendScripts'));
         add_action('wp_enqueue_scripts', array($this, 'addFrontendStyles'));
+        add_action('wp_enqueue_scripts', array($this, 'dequeueDashicons'));
     }
 
     /**
@@ -79,7 +74,7 @@ class Theme
      */
     public function addFrontendStyles()
     {
-        wp_enqueue_style('css-reset', get_template_directory_uri().'/resources/public/css/css-reset.css', null, $this->version);
+        wp_enqueue_style('css-reset', get_template_directory_uri().'/assets/dist/styles/css-reset.css', null, $this->version);
         wp_enqueue_style('theme', get_stylesheet_uri(), array('css-reset'), $this->version, 'all');
     }
 
@@ -92,7 +87,7 @@ class Theme
         wp_enqueue_script('jquery'); // Use WordPress core version
 
         // In footer
-        wp_enqueue_script('ui', get_template_directory_uri().'/resources/public/javascript/ui.js', array('jquery'), $this->version, true);
+        wp_enqueue_script('ui', get_template_directory_uri().'/assets/dist/scripts/ui.js', array('jquery'), $this->version, true);
 
         /*
          * Your value for TEXT_DOMAIN_JS must be suitable for use
@@ -107,6 +102,13 @@ class Theme
             ),
         ));
     }
+
+    public function dequeueDashicons() {
+        //if (!is_user_logged_in()) {
+            wp_deregister_style('dashicons');
+        //}
+    }
+
 }
 
 new Theme();
