@@ -10,16 +10,16 @@
 if (have_posts()) {
     if (is_category() || is_tag()) {
         $queried_object = get_queried_object();
-        get_template_part('resources/private/partials/listheader-'.$queried_object->taxonomy);
+        get_template_part('partials/listheader-'.$queried_object->taxonomy);
     } elseif (is_year()) {
-        get_template_part('resources/private/partials/listheader-year');
+        get_template_part('partials/listheader-year');
     } elseif (is_month()) {
-        get_template_part('resources/private/partials/listheader-month');
+        get_template_part('partials/listheader-month');
     } elseif (is_day()) {
-        get_template_part('resources/private/partials/listheader-day');
+        get_template_part('partials/listheader-day');
     } elseif (is_search()) {
-        get_template_part('resources/private/partials/listheader-search');
+        get_template_part('partials/listheader-search');
     } elseif (is_author()) {
-        get_template_part('resources/private/partials/listheader-author');
+        get_template_part('partials/listheader-author');
     }
 }

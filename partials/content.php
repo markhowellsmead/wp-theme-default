@@ -1,7 +1,7 @@
 <article <?php post_class();?>>
 
         <?php
-            get_template_part('resources/private/partials/header', 'single');
+            get_template_part('partials/header', 'single');
         ?>
 
         <section class="post-body">
@@ -11,7 +11,7 @@
         </section>
 
         <?php
-            get_template_part('resources/private/partials/footer', 'single');
+            get_template_part('partials/footer', 'single');
         ?>
 
     </section>
