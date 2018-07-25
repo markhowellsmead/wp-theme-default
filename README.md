@@ -29,35 +29,8 @@ more classically large CMS, like TYPO3. It's as close as I can get to [PSR-4](ht
 8. The standard compatability check looks for **WordPress 4.6** or newer and **PHP 5.3** or newer. If this doesn't match your theme requirements, replace all instances of these version numbers throughout the theme before you start work.
 9. Make a great WordPress Theme!
 
-## Changelog
-
-### 0.0.6
-* Add empty SCSS folder (with gitkeep file) to indicated planned file structure.
-
-### 0.0.5
-* Bugfix JavaScript text domain.
-
-### 0.0.4
-* Improve version checking.
-* Improve namespace and text domain example code.
-* Revise folder/file naming to use lowercase, except for individual PHP class files.
-* Re-locate template parts to use a more common, fallback-friendly file structure.
-* Add starter file for single post view, and add various template parts.
-* Improve README.
-
-### 0.0.3
-* Fix enqueued file version numbering.
-* Fix misplaced code comments.
-
-### 0.0.2
-* Add proper Theme comment to style.css file.
-* Add Content-None template part.
-
-### 0.0.1
-* Initial version
-
 ## Author
-Mark Howells-Mead | www.markweb.ch | Since 23rd November 2016
+Mark Howells-Mead | www.permanenttourist.ch | Since 23rd November 2016
 
 ## License
 Use this code freely, widely and for free. Provision of this code provides and implies no guarantee.
