@@ -21,11 +21,11 @@
  */
 function THEME_KEY_switch_theme()
 {
-    switch_theme(WP_DEFAULT_THEME, WP_DEFAULT_THEME); // These are PHP constants and do not need to be changed.
+	switch_theme(WP_DEFAULT_THEME, WP_DEFAULT_THEME); // These are PHP constants and do not need to be changed.
 
-    unset($_GET['activated']);
+	unset($_GET['activated']);
 
-    add_action('admin_notices', 'THEME_KEY_upgrade_notice');
+	add_action('admin_notices', 'THEME_KEY_upgrade_notice');
 }
 add_action('after_switch_theme', 'THEME_KEY_switch_theme');
 
@@ -39,14 +39,14 @@ add_action('after_switch_theme', 'THEME_KEY_switch_theme');
  */
 function THEME_KEY_upgrade_notice()
 {
-    $message = sprintf(
-        __('The selected theme requires at least WordPress version %1$s and PHP version %2$s. You are running WordPress %3$s and PHP version %4$s. Please upgrade and try again.', 'TEXT_DOMAIN'),
-        '4.6',
-        '5.3',
-        $GLOBALS['wp_version'],
-        PHP_VERSION
-    );
-    printf('<div class="error"><p>%s</p></div>', $message);
+	$message = sprintf(
+		__('The selected theme requires at least WordPress version %1$s and PHP version %2$s. You are running WordPress %3$s and PHP version %4$s. Please upgrade and try again.', 'TEXT_DOMAIN'),
+		'4.6',
+		'5.3',
+		$GLOBALS['wp_version'],
+		PHP_VERSION
+	);
+	printf('<div class="error"><p>%s</p></div>', $message);
 }
 
 /**
@@ -56,15 +56,15 @@ function THEME_KEY_upgrade_notice()
  */
 function THEME_KEY_customize()
 {
-    wp_die(sprintf(
-        __('The selected theme requires at least WordPress version %1$s and PHP version %2$s. You are running WordPress %3$s and PHP version %4$s. Please upgrade and try again.', 'TEXT_DOMAIN'),
-        '4.6',
-        '5.3',
-        $GLOBALS['wp_version'],
-        PHP_VERSION
-    ), '', array(
-        'back_link' => true,
-    ));
+	wp_die(sprintf(
+		__('The selected theme requires at least WordPress version %1$s and PHP version %2$s. You are running WordPress %3$s and PHP version %4$s. Please upgrade and try again.', 'TEXT_DOMAIN'),
+		'4.6',
+		'5.3',
+		$GLOBALS['wp_version'],
+		PHP_VERSION
+	), '', array(
+		'back_link' => true,
+	));
 }
 add_action('load-customize.php', 'THEME_KEY_customize');
 
@@ -75,14 +75,14 @@ add_action('load-customize.php', 'THEME_KEY_customize');
  */
 function THEME_KEY_preview()
 {
-    if (isset($_GET['preview'])) {
-        wp_die(sprintf(
-            __('The selected theme requires at least WordPress version %1$s and PHP version %2$s. You are running WordPress %3$s and PHP version %4$s. Please upgrade and try again.', 'TEXT_DOMAIN'),
-            '4.6',
-            '5.3',
-            $GLOBALS['wp_version'],
-            PHP_VERSION
-        ));
-    }
+	if (isset($_GET['preview'])) {
+		wp_die(sprintf(
+			__('The selected theme requires at least WordPress version %1$s and PHP version %2$s. You are running WordPress %3$s and PHP version %4$s. Please upgrade and try again.', 'TEXT_DOMAIN'),
+			'4.6',
+			'5.3',
+			$GLOBALS['wp_version'],
+			PHP_VERSION
+		));
+	}
 }
 add_action('template_redirect', 'THEME_KEY_preview');
