@@ -42,7 +42,7 @@ function THEME_KEY_upgrade_notice()
 	$message = sprintf(
 		__('The selected theme requires at least WordPress version %1$s and PHP version %2$s. You are running WordPress %3$s and PHP version %4$s. Please upgrade and try again.', 'TEXT_DOMAIN'),
 		'4.6',
-		'5.3',
+		'5.4',
 		$GLOBALS['wp_version'],
 		PHP_VERSION
 	);
@@ -59,7 +59,7 @@ function THEME_KEY_customize()
 	wp_die(sprintf(
 		__('The selected theme requires at least WordPress version %1$s and PHP version %2$s. You are running WordPress %3$s and PHP version %4$s. Please upgrade and try again.', 'TEXT_DOMAIN'),
 		'4.6',
-		'5.3',
+		'5.4',
 		$GLOBALS['wp_version'],
 		PHP_VERSION
 	), '', array(
@@ -79,7 +79,7 @@ function THEME_KEY_preview()
 		wp_die(sprintf(
 			__('The selected theme requires at least WordPress version %1$s and PHP version %2$s. You are running WordPress %3$s and PHP version %4$s. Please upgrade and try again.', 'TEXT_DOMAIN'),
 			'4.6',
-			'5.3',
+			'5.4',
 			$GLOBALS['wp_version'],
 			PHP_VERSION
 		));

@@ -6,9 +6,9 @@ class Theme
 {
 	use Taxonomy;
 
-	public $themeoptions = array();
+	public $themeoptions = [];
 	public $version = '';
-	public $themedata = array();
+	public $themedata = [];
 
 	/**
 	 * Debug helper function. You probably don't need this in a production-quality Theme.
@@ -53,20 +53,20 @@ class Theme
          * Switch default core markup for search form, comment form, and comments
          * to output valid HTML5.
          */
-		add_theme_support('html5', array(
+		add_theme_support('html5', [
 			'search-form',
 			'comment-form',
 			'comment-list',
 			'gallery',
 			'caption',
-		));
+		]);
 
 		/*
          * Add the CSS files and JavaScripts for the website output.
          */
-		add_action('wp_enqueue_scripts', array($this, 'addFrontendScripts'));
-		add_action('wp_enqueue_scripts', array($this, 'addFrontendStyles'));
-		add_action('wp_enqueue_scripts', array($this, 'dequeueDashicons'));
+		add_action('wp_enqueue_scripts', [$this, 'addFrontendScripts']);
+		add_action('wp_enqueue_scripts', [$this, 'addFrontendStyles']);
+		add_action('wp_enqueue_scripts', [$this, 'dequeueDashicons']);
 	}
 
 	/**
@@ -75,7 +75,7 @@ class Theme
 	public function addFrontendStyles()
 	{
 		wp_enqueue_style('css-reset', get_template_directory_uri().'/assets/dist/styles/css-reset.css', null, $this->version);
-		wp_enqueue_style('theme', get_stylesheet_uri(), array('css-reset'), $this->version, 'all');
+		wp_enqueue_style('theme', get_stylesheet_uri(), ['css-reset'], $this->version, 'all');
 	}
 
 	/**
@@ -87,7 +87,7 @@ class Theme
 		wp_enqueue_script('jquery'); // Use WordPress core version
 
 		// In footer
-		wp_enqueue_script('ui', get_template_directory_uri().'/assets/dist/scripts/ui.js', array('jquery'), $this->version, true);
+		wp_enqueue_script('ui', get_template_directory_uri().'/assets/dist/scripts/ui.js', ['jquery'], $this->version, true);
 
 		/*
          * Your value for TEXT_DOMAIN_JS must be suitable for use
@@ -96,11 +96,11 @@ class Theme
          *
          * If you don't need to pass translations to JavaScript, then you can delete this.
          */
-		wp_localize_script('ui', 'TEXT_DOMAIN_JS', array(
-			'translations' => array(
+		wp_localize_script('ui', 'TEXT_DOMAIN_JS', [
+			'translations' => [
 				'Hello world' => __('Hello world', 'TEXT_DOMAIN'),
-			),
-		));
+			],
+		]);
 	}
 
 	public function dequeueDashicons()
