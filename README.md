@@ -10,7 +10,7 @@ more classically large CMS, like TYPO3. It's as close as I can get to [PSR-4](ht
 
 ## Notes
 * The standard code insists on WordPress 4.6 or newer. Amend the code in ``functions.php`` if this doesn't match with your requirements.
-* Because this code uses [PHP namespaces](http://php.net/manual/en/language.namespaces.php), it will only work on servers running PHP 5.3 or newer.
+* Because this code uses [PHP namespaces](http://php.net/manual/en/language.namespaces.php), it will only work on servers running PHP 5.4 or newer.
 * Not all of the code files in this example are annotated. If you need to know how the template hierarchy works, then read the [core documentation](https://codex.wordpress.org/Theme_Development) before you start.
 
 ### Customization

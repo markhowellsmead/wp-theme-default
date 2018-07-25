@@ -3,11 +3,11 @@
  * This file links the class file for the Theme and through it, any additional classes.
  * Functions should be added to the Theme Class, except for unusual circumstances.
  *
- * This Theme base code is intended for use in WordPress 4.6 or newer running on PHP 5.3 or newer.
+ * This Theme base code is intended for use in WordPress 4.6 or newer running on PHP 5.4 or newer.
  * If that condition doesn't match, the theme will output a warning and WordPress will revert back
  * to the default theme.
  */
-if (version_compare($wp_version, '4.6', '<') || version_compare(PHP_VERSION, '5.3', '<')) {
+if (version_compare($wp_version, '4.6', '<') || version_compare(PHP_VERSION, '5.4', '<')) {
 	require get_template_directory().'/utilities/backcompat.php';
 } else {
 	/*
