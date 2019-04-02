@@ -27,12 +27,22 @@ if ( version_compare( $wp_version, '5.0', '<' ) || version_compare( PHP_VERSION,
 		}
 	);
 
-	new TOPLEVELNAMESPACE\THEMENAMESPACE\Theme();
+	/**
+	 * Returns the Theme Instance
+	 *
+	 * @return Object Theme Object
+	 */
+	if ( ! function_exists( 'PREFIX_theme' ) ) {
+		function PREFIX_theme() {
+			return TOPLEVELNAMESPACE\THEMENAMESPACE\Theme::getInstance();
+		}
+	}
+	PREFIX_theme();
+	PREFIX_theme()->run();
 
 	/**
-	 * $content_width is a WordPress requirement, which constrains images and oEmbeds
-	 * which may appear in the main content column. See https://codex.wordpress.org/Content_Width
-	 * for full details.
+	 * $content_width is a WordPress requirement
+	 * https://codex.wordpress.org/Content_Width
 	 *
 	 * Customize this value for your website. (Referencing the max. width of the main
 	 * content column at desktop resolution.)

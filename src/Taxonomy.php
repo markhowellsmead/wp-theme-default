@@ -4,7 +4,7 @@ namespace TOPLEVELNAMESPACE\THEMENAMESPACE;
 
 trait Taxonomy {
 
-	public static function hasMultipleCategories() {
+	public function hasMultipleCategories() {
 		$taxonomies = get_categories(
 			[
 				'fields' => 'ids',

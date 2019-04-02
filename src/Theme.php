@@ -6,6 +6,12 @@ class Theme {
 
 	use Taxonomy;
 
+	/**
+	 * the instance of the object, used for singelton check
+	 * @var object
+	 */
+	private static $instance;
+
 	public $themeoptions = [];
 	public $version      = '';
 	public $themedata    = [];
@@ -25,10 +31,47 @@ class Theme {
 	 * Add your hook and filter references here.
 	 */
 	public function __construct() {
-		 $this->themeoptions = get_option( 'themeoptions_TEXT_DOMAIN' );
-		$this->themedata     = wp_get_theme();
-		$this->version       = $this->themedata->Version; // from style.css in the theme root folder
+		$this->themeoptions = get_option( 'themeoptions_TEXT_DOMAIN' );
+		$this->themedata    = wp_get_theme();
+		$this->version      = $this->themedata->Version; // from style.css in the theme root folder
+	}
 
+	public function run() {
+
+		/**
+		 * Add functionality support rules for this Theme
+		 */
+		add_action( 'after_setup_theme', [ $this, 'themeSupports' ] );
+
+		/*
+		 * Add the CSS files and JavaScripts for the website output.
+		 */
+		add_action( 'wp_enqueue_scripts', [ $this, 'addFrontendScripts' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, 'addFrontendStyles' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, 'dequeueDashicons' ] );
+	}
+
+	/**
+	 * Creates an instance if one isn't already available,
+	 * then return the current instance.
+	 * @return object       The class instance.
+	 */
+	public static function getInstance() {
+		if ( ! isset( self::$instance ) && ! ( self::$instance instanceof Theme ) ) {
+			self::$instance          = new Theme;
+			self::$instance->name    = self::$instance->theme->name;
+			self::$instance->version = self::$instance->theme->version;
+			self::$instance->prefix  = 'sht';
+			self::$instance->error   = __( 'An unexpected error occured.', 'sht' );
+			self::$instance->debug   = true;
+			if ( ! isset( $_SERVER['HTTP_HOST'] ) || strpos( $_SERVER['HTTP_HOST'], '.hello' ) === false && ! in_array( $_SERVER['REMOTE_ADDR'], [ '127.0.0.1', '::1' ] ) ) {
+				self::$instance->debug = false;
+			}
+		}
+		return self::$instance;
+	}
+
+	public function themeSupports() {
 		/*
 		 * Add default posts and comments RSS feed links to head.
 		 */
@@ -61,13 +104,6 @@ class Theme {
 				'caption',
 			]
 		);
-
-		/*
-		 * Add the CSS files and JavaScripts for the website output.
-		 */
-		add_action( 'wp_enqueue_scripts', [ $this, 'addFrontendScripts' ] );
-		add_action( 'wp_enqueue_scripts', [ $this, 'addFrontendStyles' ] );
-		add_action( 'wp_enqueue_scripts', [ $this, 'dequeueDashicons' ] );
 	}
 
 	/**
