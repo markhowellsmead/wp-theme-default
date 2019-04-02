@@ -1,19 +1,19 @@
-<article <?php post_class();?>>
+<article <?php post_class(); ?>>
 
-        <?php
-            get_template_part('partials/header', 'loop');
-        ?>
+		<?php
+			get_template_part( 'partials/header', 'loop' );
+		?>
 
-        <section class="post-body">
-        <?php
-            the_excerpt();
-        ?>
-        </section>
+		<section class="post-body">
+		<?php
+			the_excerpt();
+		?>
+		</section>
 
-        <?php
-            get_template_part('partials/footer', 'loop');
-        ?>
+		<?php
+			get_template_part( 'partials/footer', 'loop' );
+		?>
 
-    </section>
+	</section>
 
 </article>
