@@ -1,9 +1,9 @@
 <?php
 
-get_header('page');
+get_header( 'page' );
 
 the_post();
 
-get_template_part('partials/content', 'page');
+get_template_part( 'partials/content', 'page' );
 
-get_footer('page');
+get_footer( 'page' );
