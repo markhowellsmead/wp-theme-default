@@ -59,8 +59,8 @@ class Theme {
 	public static function getInstance() {
 		if ( ! isset( self::$instance ) && ! ( self::$instance instanceof Theme ) ) {
 			self::$instance          = new Theme;
-			self::$instance->name    = self::$instance->theme->name;
-			self::$instance->version = self::$instance->theme->version;
+			self::$instance->name    = self::$instance->themedata->name;
+			self::$instance->version = self::$instance->themedata->version;
 			self::$instance->prefix  = 'sht';
 			self::$instance->error   = __( 'An unexpected error occured.', 'sht' );
 			self::$instance->debug   = true;
