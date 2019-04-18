@@ -1,19 +1,13 @@
-<article <?php post_class(); ?>>
+<article <?php post_class('c-post'); ?>>
 
-		<?php
-			get_template_part( 'partials/header', 'single' );
-		?>
+	<?php
+		get_template_part( 'partials/header', get_post_type() );
+	?>
 
-		<section class="post-body">
+	<section class="c-post__body">
 		<?php
 			the_content();
 		?>
-		</section>
-
-		<?php
-			get_template_part( 'partials/footer', 'single' );
-		?>
-
 	</section>
 
 </article>
