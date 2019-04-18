@@ -1,7 +1,7 @@
 <header class="post-header">
-<?php
+	<?php
 
-	the_title( sprintf( '<h2 class="post-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+	the_title( sprintf( '<h1 class="post-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' );
 
 	printf(
 		'<time class="post-published" datetime="%1$s">%2$s</time>',
@@ -12,5 +12,6 @@
 			get_the_time()
 		)
 	);
+
 	?>
 </header>
